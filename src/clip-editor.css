@@ -13,3 +13,6 @@
 .piano-nav-track{background:#30363a!important;border-color:#465056!important}.piano-nav-thumb{background:#747f84!important;border-color:#919b9f!important;cursor:grab}.piano-nav-thumb::before,.piano-nav-thumb::after{content:"";position:absolute;top:0;bottom:0;width:6px;background:#9aa4a8;cursor:ew-resize;z-index:4}.piano-nav-thumb::before{left:0}.piano-nav-thumb::after{right:0}.piano-nav-thumb:active{cursor:grabbing;background:#849095!important}.piano-zoom-corner{background:#747f84!important;border:1px solid #919b9f!important;cursor:ns-resize}.piano-zoom-corner>span{width:9px;height:9px;background:#11171b;border:1px solid #090d0f;display:block;box-shadow:inset 0 1px 1px #000}
 .piano-mini-note{z-index:5!important}.piano-row.in-scale{box-shadow:inset 0 0 0 1px #89969d!important}
 .piano-keys>div{font-size:14px!important}.piano-keys .black-key{font-size:12px!important}
+/* Keep the snap grid visible through the lane and rows rather than painting over it. */
+.wave-lane.stereo-combined{background:transparent!important}.piano-row{background-color:transparent!important}.piano-row.in-scale{background-color:rgba(196,204,209,.25)!important}
+.clip-editor-overlay{background:transparent!important}
