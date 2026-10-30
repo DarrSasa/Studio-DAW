@@ -88,6 +88,7 @@ VERIFICARE AUTOMATĂ A ITERAȚIEI
 - [x] AudioContext este deblocat direct din gestul Play; clipurile audio noi se salvează/restaurează local din IndexedDB, iar erorile audio sunt raportate în UI.
 - [x] API Agent: Gemini 3.8 Flash, Groq, OpenRouter și Local, cu chei/model salvate local; selectorul și câmpurile cheie sunt vizibile direct în fereastra Agent.
 - [x] Context Studio-DAW injectat la fiecare mesaj: schema UI + starea curentă a playlistului/pistelor/clipurilor; read-only, fără acțiuni de control/MCP conectate.
+- [x] Caseta inferioară afișează conversația sincronizată cu fereastra Agent, are scrollbar/thumb, resize vertical, pliere, mutare/detașare și ștergere conversație în ambele ferestre.
 - [x] Suno: MusicAPI balance/create/task status pentru V6/V6 Wild/V6 Mini, Suno-API.io create/query (terț), plus verificare gratuită C2PA file/URL.
 - [ ] Generarea externă Suno nu a fost testată cu cheie de cont: utilizatorul trebuie să folosească creditul trial propriu și să confirme costul/limitarea în UI înainte de test.
 - [x] Vite servit în preview; FluidSynth Worklet assets verificate HTTP 200.
