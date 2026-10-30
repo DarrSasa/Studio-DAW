@@ -18,7 +18,8 @@ CERINȚE DIN ULTIMUL MESAJ — CODUL ESTE IMPLEMENTAT
 - [x] Mutarea clipurilor: pointer drag stânga/dreapta și între canale; click selectează, al doilea click pe același clip îl deselectează.
 - [x] Selecție goală pe canal: drag creează chenar verde luminos de 1 px; centrul mută cu cursor palmă/grab; marginile schimbă lungimea la Snap; click pe selecție o închide. Nu se creează încă un clip automat la selectarea zonei.
 - [x] Ignoră fișierele SoundFont din git (`SoundFonts/*.sf2`, `.sf3`, audio samples); `gitpush.bat` refuză push-ul dacă regula de ignorare lipsește.
-- [x] Creat repository Git local în proiect, branch `main`, commit inițial; scripturi Windows `gitpush.bat`, `gitpull.bat`, `gitremote.bat`.
+- [x] Repository-ul public `DarrSasa/Studio-DAW` este conectat la `origin/main`; am autentificare de scriere autorizată în workspace și pot publica commit-urile direct. Utilizatorul primește actualizările în același folder doar cu `gitpull.bat`, fără dezarhivări repetate.
+- [x] Scripturi Windows `gitpush.bat`, `gitpull.bat`, `gitremote.bat`; fișierul de autentificare nu este inclus în repo/arhive.
 - [x] Rulat Vite local: aplicația și fișierele FluidSynth Worklet servesc; asset-urile Worklet au răspuns HTTP 200.
 
 REFERINȚA VIZUALĂ MIDI
@@ -72,7 +73,7 @@ PASUL 4 — Prompt, Style, Lyrics și Agent
 PASUL 5 — GM și pachet
 - [x] FluidSynth/SoundFont loader, selectare program GM și test-note.
 - [x] `SoundFonts/`, gitignore pentru SF2, scripts pentru push/pull/remote.
-- [ ] Push/URL de repository remote: Arena nu are connector GitHub disponibil în această sesiune și proiectul nu are remote configurat. Este necesar URL-ul remote creat de utilizator (GitHub/GitLab/etc.); `gitremote.bat` îl configurează și încearcă primul push.
+- [x] URL remote configurat și verificat: `https://github.com/DarrSasa/Studio-DAW`; push direct din workspace este disponibil. Pentru utilizator, update-ul în același folder se face cu `gitpull.bat`.
 - [ ] Finalul pe Windows depinde de testul utilizatorului pentru audio/MIDI/SF2 și eventuala corectare a bugurilor găsite.
 
 VERIFICARE AUTOMATĂ A ITERAȚIEI

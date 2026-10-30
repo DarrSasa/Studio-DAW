@@ -39,7 +39,8 @@ GIT PENTRU WINDOWS
 - Dupa dezarhivare, creeaza un repository gol pe GitHub/GitLab. Ruleaza `gitremote.bat` o singura data si lipeste URL-ul HTTPS/SSH al repo-ului. Scriptul initiaza branch main, configureaza autorul local si face push-ul initial.
 - Pentru actualizare: `gitpull.bat`; dupa modificari: `gitpush.bat` si introdu un mesaj de commit.
 - `.gitignore` exclude `SoundFonts/*.sf2` si `.sf3`; scriptul gitpush verifica acest lucru inainte de push. Nu copia token-uri/chei in repo.
-- In aceasta arhiva repo-ul este local initializat in mediul de lucru, dar nu exista remote GitHub/GitLab; nu pot da un URL remote fara URL-ul tau/remote creat.
+- Repository-ul public `https://github.com/DarrSasa/Studio-DAW` este conectat la branch-ul `main`. Dupa prima configurare, nu mai dezarhivezi actualizari: daca eu public un commit nou pe acest remote, rulezi doar `gitpull.bat` in acelasi folder si fisierele se actualizeaza pe loc.
+- `gitpush.bat` si `gitpull.bat` folosesc repository-ul conectat; nu include si nu cere sa expui token-uri sau parole.
 
 DEPENDENTE TERTE
 - SoundTouchJS (LGPL-2.1), js-synthesizer (BSD-3-Clause), FluidSynth (LGPL); licentele sunt in node_modules dupa instalare.
