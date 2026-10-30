@@ -72,8 +72,8 @@ PASUL 3 — Editare, markere și playback
 - [ ] Peak/transient snapping nu este detector profesionist de transient; marker-ul Snap este disponibil.
 
 PASUL 4 — Prompt, Style, Lyrics și Agent
-- [x] Style text, slider Style, Lyrics cu tag-uri, referințe și agent Gemini pentru text opțional.
-- [ ] Suno/API nu este conectat; nicio generare reală sau cost nu este pretins. Integrarea cere furnizor/credențiale și confirmarea utilizatorului.
+- [x] Style text, slider Style, Lyrics cu tag-uri, referințe și agent text selectabil Gemini/Groq/OpenRouter/Local, cu chei locale și model OpenRouter configurabil.
+- [x] UI pentru furnizor Suno API, selector V6/V6 Wild/V6 Mini și cheie salvată local; generarea nu este conectată până la confirmarea endpointului/tarifului.
 
 PASUL 5 — GM și pachet
 - [x] FluidSynth/SoundFont loader, selectare program GM și test-note.
@@ -85,6 +85,7 @@ VERIFICARE AUTOMATĂ A ITERAȚIEI
 -------------------------------
 - [x] `npm test`: 7/7 teste trecute (5 parser/engine + 2 DSP buffer).
 - [x] `npm run build`: TypeScript și Vite build trecute.
+- [x] AudioContext este deblocat direct din gestul Play; clipurile audio noi se salvează/restaurează local din IndexedDB, iar erorile audio sunt raportate în UI.
 - [x] Vite servit în preview; FluidSynth Worklet assets verificate HTTP 200.
 - [ ] Interacțiuni de pointer, selecție, GM real și DSP nu pot fi declarate validate audiovizual pe Windows aici.
 
@@ -92,5 +93,5 @@ NOTE DE LIVRARE ȘI SIGURANȚĂ
 ---------------------------
 - Se păstrează corpus/repo-uri; nu se accesează PC-ul utilizatorului.
 - Nu se includ SoundFont-uri protejate în repo sau arhivă; regula git exclude exact asset-urile voluminoase.
-- Export JSON nu include audio. Fișierele audio importate necesită reimport după închiderea paginii.
+- Export JSON nu include audio. Audio-ul sursă importat este păstrat local în IndexedDB; clipurile vechi fără assetId pot necesita reimport o singură dată.
 - `gitpush.bat` face commit și push către `origin main`; `gitpull.bat` face `git pull --rebase origin main`; `gitremote.bat` cere URL-ul repository-ului remote și încearcă push-ul inițial.
