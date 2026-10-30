@@ -33,3 +33,8 @@
 /* Resize grips stay hit-testable over the whole edge, with their visible marker centered vertically. */
 .overviewEdge{cursor:ew-resize!important;touch-action:none}
 .overviewEdge::after{content:"";position:absolute;left:50%;top:50%;width:4px;height:62%;min-height:8px;transform:translate(-50%,-50%);border:1px solid #d7dfe1;border-radius:2px;background:linear-gradient(90deg,#65747a,#d0d8da 50%,#65747a);box-shadow:0 0 2px #111;pointer-events:none}
+.agent-config .agent-rules{grid-column:1/-1;border:1px solid #34383b;border-radius:6px;background:#191c1f;overflow:hidden}
+.agent-config .agent-rules summary{padding:7px 9px;color:#c1c9cc;font-size:9px;cursor:pointer;list-style:none}
+.agent-config .agent-rules summary::-webkit-details-marker{display:none}
+.agent-config .agent-rules textarea{display:block;width:calc(100% - 16px);min-height:76px;margin:0 8px 7px;resize:vertical;background:#101417;border:1px solid #384247;border-radius:5px;padding:7px;color:#d5dcdf;font-size:10px;line-height:1.45}
+.agent-config .agent-rules small{display:block;padding:0 8px 8px;color:#929da1;font-size:8px;line-height:1.4}
