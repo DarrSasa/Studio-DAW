@@ -86,7 +86,7 @@ VERIFICARE AUTOMATĂ A ITERAȚIEI
 - [x] `npm test`: 7/7 teste trecute (5 parser/engine + 2 DSP buffer).
 - [x] `npm run build`: TypeScript și Vite build trecute.
 - [x] AudioContext este deblocat direct din gestul Play; clipurile audio noi se salvează/restaurează local din IndexedDB, iar erorile audio sunt raportate în UI.
-- [x] API Agent: Gemini 3.8 Flash, Groq, OpenRouter și Local, cu chei/model salvate local.
+- [x] API Agent: Gemini 3.8 Flash, Groq, OpenRouter și Local, cu chei/model salvate local; selectorul și câmpurile cheie sunt vizibile și direct în fereastra Agent din transportul playlist-ului.
 - [x] Suno: MusicAPI balance/create/task status pentru V6/V6 Wild/V6 Mini, Suno-API.io create/query (terț), plus verificare gratuită C2PA file/URL.
 - [ ] Generarea externă Suno nu a fost testată cu cheie de cont: utilizatorul trebuie să folosească creditul trial propriu și să confirme costul/limitarea în UI înainte de test.
 - [x] Vite servit în preview; FluidSynth Worklet assets verificate HTTP 200.
