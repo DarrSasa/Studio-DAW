@@ -86,8 +86,8 @@ VERIFICARE AUTOMATĂ A ITERAȚIEI
 - [x] `npm test`: 7/7 teste existente trecute (engine/DSP); nu există teste de integrare API live.
 - [x] `npm run build`: TypeScript și Vite build trecute.
 - [x] AudioContext este deblocat direct din gestul Play; clipurile audio noi se salvează/restaurează local din IndexedDB, iar erorile audio sunt raportate în UI.
-- [x] API Agent: Gemini, Groq, OpenRouter și Local; numai Groq/OpenRouter primesc tool-uri de control în această versiune. Cheile rămân configurate în UI și salvate local.
-- [x] Context Studio-DAW injectat la fiecare mesaj; tool/function calling Groq/OpenRouter operează BPM, cheie/gamă, piste audio/MIDI, playhead, volum/mute și Snap. Integrarea folosește tool-uri locale; nu pretinde MCP server activ.
+- [x] API Agent: Gemini, Groq, OpenRouter și Local; toți furnizorii AI conectați prin API (Gemini, Groq, OpenRouter și cei adăugați ulterior) folosesc aceeași listă de tool-uri prin adaptorul protocolului; Local nu are model/API. Cheile rămân configurate în UI și salvate local.
+- [x] Context Studio-DAW injectat la fiecare mesaj; tool/function calling al agenților conectați prin API operează BPM, cheie/gamă, piste audio/MIDI, playhead, volum/mute și Snap. Integrarea folosește tool-uri locale; nu pretinde MCP server activ.
 - [x] Fără parser local de comenzi și fără valori implicite impuse de cereri precedente: proiectul pornește la 120 BPM / C Major; Groq/OpenRouter aleg tool-ul în baza cererii utilizatorului.
 - [x] Caseta inferioară afișează conversația sincronizată cu fereastra Agent, are scrollbar/thumb, resize vertical, pliere, mutare/detașare și ștergere conversație în ambele ferestre.
 - [x] Suno: Groq/OpenRouter pot porni generarea prin MusicAPI sau Suno-API.io; verificare sold MusicAPI, confirmare înainte de cost, polling de fundal și inserare audio în playlist. API oficial Suno nu este configurat.
