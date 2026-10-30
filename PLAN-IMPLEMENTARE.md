@@ -14,7 +14,7 @@ CERINȚE DIN ULTIMUL MESAJ — CODUL ESTE IMPLEMENTAT
 - [x] Markere de clip: dublu-click în waveform/piano-roll adaugă; drag repoziționează la Snap; dublu-click pe marker îl elimină.
 - [x] Waveform-ul playlist audio este o undă centrală stereo-combinată, color/albastră pentru citire vizuală apropiată de captura „audio parts”.
 - [x] Editorul Audio maximum view are waveform albastră centrală și linii Snap/măsură.
-- [x] Piano-roll are taste verticale în dreapta, rânduri pitch, note albastre, pencil/select, Snap și playhead.
+- [x] Piano-roll are taste verticale în dreapta, rânduri pitch, note verde-pal, pencil/select, Snap și playhead.
 - [x] Mutarea clipurilor: pointer drag stânga/dreapta și între canale; click selectează, al doilea click pe același clip îl deselectează.
 - [x] Selecție goală pe canal: drag creează chenar verde luminos de 1 px; centrul mută cu cursor palmă/grab; marginile schimbă lungimea la Snap; click pe selecție o închide. Nu se creează încă un clip automat la selectarea zonei.
 - [x] Ignoră fișierele SoundFont din git (`SoundFonts/*.sf2`, `.sf3`, audio samples); `gitpush.bat` refuză push-ul dacă regula de ignorare lipsește.
@@ -24,8 +24,10 @@ CERINȚE DIN ULTIMUL MESAJ — CODUL ESTE IMPLEMENTAT
 
 REFERINȚA VIZUALĂ MIDI
 ----------------------
-- [x] A folosit captura atașată `midi part maximum view.png` și cerința textuală pentru piano-roll cu claviatura verticală pe dreapta.
-- [ ] Fișierul numit `fl studio pianoroll.png` nu apare în `/home/user/uploads`; încărca-l din nou pentru potrivirea exactă a detaliilor grafice. Nu am pretins că am comparat cu un fișier care nu este disponibil.
+- [x] Comparată cu captura atașată `fl studio pianoroll.png`; aplicate nuanțe aproximative de grilă albastru-cenușie, clape deschise/închise și note verde-pal. Grosimile rămân aproximative din cauza compresiei capturii.
+- [x] Zoom orizontal cu rotița pe rigla măsurilor și pătratul din dreapta-sus; thumbnail de navigare sincronizat cu scroll-ul piano-roll-ului.
+- [x] Bare și thumb-uri native restilizate în paleta capturii.
+- [ ] Verificare vizuală interactivă finală în mediul Windows al utilizatorului.
 
 SOUNDFONT / GM
 --------------
@@ -56,7 +58,7 @@ PASUL 2 — Editor extins Audio/MIDI
 - [x] Note MIDI desenabile cu Pencil; margini resize ↔; centru mută sus/jos/stânga/dreapta la Snap.
 - [x] Selectare dreptunghiulară și ștergere note MIDI.
 - [x] Piano-roll cu Key/Scale și tastatură verticală dreapta.
-- [ ] Zoom-ul/scroll-ul editorului și verificarea pixel-perfect cu PNG-ul FL Studio lipsă.
+- [x] Zoom orizontal și navigare/scroll piano-roll; verificarea vizuală finală în mediul Windows rămâne deschisă.
 
 PASUL 3 — Editare, markere și playback
 - [x] Play/Pause în playlist pentru audio/MIDI, solo/mute, nivel de pistă.
