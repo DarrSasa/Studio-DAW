@@ -83,15 +83,15 @@ PASUL 5 — GM și pachet
 
 VERIFICARE AUTOMATĂ A ITERAȚIEI
 -------------------------------
-- [x] `npm test`: 10/10 teste trecute (5 parser/engine + 2 DSP + 3 Studio commands).
+- [x] `npm test`: 7/7 teste existente trecute (engine/DSP); nu există teste de integrare API live.
 - [x] `npm run build`: TypeScript și Vite build trecute.
 - [x] AudioContext este deblocat direct din gestul Play; clipurile audio noi se salvează/restaurează local din IndexedDB, iar erorile audio sunt raportate în UI.
-- [x] API Agent: Gemini 3.8 Flash, Groq, OpenRouter și Local, cu chei/model salvate local; selectorul și câmpurile cheie sunt vizibile direct în fereastra Agent.
-- [x] Context Studio-DAW injectat la fiecare mesaj: schema UI + starea curentă a playlistului/pistelor/clipurilor; read-only, fără acțiuni de control/MCP conectate.
-- [x] Comenzi explicite de chat pentru BPM, tonalitate și gamă aplicate direct în state-ul playlistului (fără apel API); valorile cerute 88 BPM / F# Minor sunt și valorile implicite ale proiectului.
+- [x] API Agent: Gemini, Groq, OpenRouter și Local; numai Groq/OpenRouter primesc tool-uri de control în această versiune. Cheile rămân configurate în UI și salvate local.
+- [x] Context Studio-DAW injectat la fiecare mesaj; tool/function calling Groq/OpenRouter operează BPM, cheie/gamă, piste audio/MIDI, playhead, volum/mute și Snap. Integrarea folosește tool-uri locale; nu pretinde MCP server activ.
+- [x] Fără parser local de comenzi și fără valori implicite impuse de cereri precedente: proiectul pornește la 120 BPM / C Major; Groq/OpenRouter aleg tool-ul în baza cererii utilizatorului.
 - [x] Caseta inferioară afișează conversația sincronizată cu fereastra Agent, are scrollbar/thumb, resize vertical, pliere, mutare/detașare și ștergere conversație în ambele ferestre.
-- [x] Suno: MusicAPI balance/create/task status pentru V6/V6 Wild/V6 Mini, Suno-API.io create/query (terț), plus verificare gratuită C2PA file/URL.
-- [ ] Generarea externă Suno nu a fost testată cu cheie de cont: utilizatorul trebuie să folosească creditul trial propriu și să confirme costul/limitarea în UI înainte de test.
+- [x] Suno: Groq/OpenRouter pot porni generarea prin MusicAPI sau Suno-API.io; verificare sold MusicAPI, confirmare înainte de cost, polling de fundal și inserare audio în playlist. API oficial Suno nu este configurat.
+- [ ] Nici apelurile reale Groq/OpenRouter, nici generarea externă Suno nu au fost testate cu chei/credite verificate; MusicAPI nu distinge trial de credite plătite, deci utilizatorul trebuie să verifice sursa creditelor înainte de confirmare.
 - [x] Vite servit în preview; FluidSynth Worklet assets verificate HTTP 200.
 - [ ] Interacțiuni de pointer, selecție, GM real și DSP nu pot fi declarate validate audiovizual pe Windows aici.
 
