@@ -24,9 +24,12 @@ CERINȚE DIN ULTIMUL MESAJ — CODUL ESTE IMPLEMENTAT
 
 REFERINȚA VIZUALĂ MIDI
 ----------------------
-- [x] Comparată cu captura atașată `fl studio pianoroll.png`; aplicate nuanțe aproximative de grilă albastru-cenușie, clape deschise/închise și note verde-pal. Grosimile rămân aproximative din cauza compresiei capturii.
-- [x] Zoom orizontal cu rotița pe rigla măsurilor și pătratul din dreapta-sus; thumbnail de navigare sincronizat cu scroll-ul piano-roll-ului.
-- [x] Bare și thumb-uri native restilizate în paleta capturii.
+- [x] Piano-roll cu claviatura verticală în stânga, desenată cu taste albe/negre distincte și nume de note mai lizibile pe fiecare tastă.
+- [x] Scrollbar vertical cu track gri închis și thumb mai deschis; scrollbar-ul orizontal de jos este ascuns.
+- [x] Zoom vertical cu rotița în pătratul din colțul dreapta-sus; zoom orizontal rămâne pe rigla măsurilor.
+- [x] Thumb-ul de navigare orizontală poate fi tras; capetele indică resize stânga/dreapta.
+- [x] Piano-roll-ul maxim se poate deplasa prin bara de titlu, iar overlay-ul nu mai interceptează clickurile din afara ferestrei (ex. transportul playlist-ului).
+- [x] Liniile verticale rămân vizibile la setările Snap; dungile gri deschis evidențiază notele din gama selectată.
 - [ ] Verificare vizuală interactivă finală în mediul Windows al utilizatorului.
 
 SOUNDFONT / GM
