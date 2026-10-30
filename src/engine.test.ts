@@ -1,0 +1,9 @@
+import {describe,it,expect} from 'vitest';
+import {SNAP_VALUES,snapSeconds,quantize,detectKey,midiPitchClasses,parseMidiNotes} from './engine';
+describe('DAW helpers',()=>{
+ it('offers all requested snap grids with sensible sizes',()=>{expect(SNAP_VALUES).toEqual(['Bar','Beat','1/2 beat','1/3 beat','1/4 beat','Step','1/6 beat','1/2 step','1/3 step','1/4 step','1/6 step','(none)']);expect(snapSeconds('Bar',120,4)).toBe(2);expect(snapSeconds('Beat',120)).toBe(.5);expect(snapSeconds('Step',120)).toBe(.125);expect(snapSeconds('(none)',120)).toBe(0)});
+ it('quantizes time and leaves it free when snap is disabled',()=>{expect(quantize(.61,'Beat',120)).toBe(.5);expect(quantize(.61,'(none)',120)).toBe(.61);expect(quantize(-2,'Beat',120)).toBe(0)});
+ it('estimates a key from chroma energy',()=>{const x=[10,1,4,1,8,5,1,7,1,3,1,2];const k=detectKey(x);expect(k?.key).toBe('C');expect(k?.scale).toBe('Major')});
+ it('reads MIDI header and counts note-on pitch classes',()=>{const a=[0x4d,0x54,0x68,0x64,0,0,0,6,0,0,0,1,1,0xe0,0x4d,0x54,0x72,0x6b,0,0,0,13,0,0x90,60,100,0x83,0x60,0x80,60,0,0,0xff,0x2f,0];const counts=midiPitchClasses(new Uint8Array(a).buffer);expect(counts[0]).toBe(1);expect(counts.reduce((p,c)=>p+c,0)).toBe(1);const parsed=parseMidiNotes(new Uint8Array(a).buffer);expect(parsed.notes).toHaveLength(1);expect(parsed.notes[0]).toMatchObject({start:0,duration:1,pitch:60});expect(parsed.durationSeconds).toBeCloseTo(.5)});
+ it('uses the MIDI tempo event to estimate clip duration',()=>{const a=[0x4d,0x54,0x68,0x64,0,0,0,6,0,0,0,1,1,0xe0,0x4d,0x54,0x72,0x6b,0,0,0,20,0,0xff,0x51,3,0x0f,0x42,0x40,0,0x90,60,100,0x83,0x60,0x80,60,0,0,0xff,0x2f,0];const parsed=parseMidiNotes(new Uint8Array(a).buffer);expect(parsed.durationSeconds).toBeCloseTo(1);expect(parsed.notes[0].duration).toBeCloseTo(1)});
+});

@@ -1,0 +1,47 @@
+/* Step 1: playlist grid, track-menu and tempo window */
+.bar span{font-size:11px;font-weight:750;color:#f1f1f4;letter-spacing:.15px;text-shadow:0 1px 2px #000}
+.ruler{background-color:#141416;background-repeat:repeat-x}
+.lanes{background-color:#101012;background-repeat:repeat}
+.lane{background-color:transparent!important;background-image:linear-gradient(to bottom,transparent calc(100% - 1px),#29292e 1px)}
+.playhead{width:1px;background:#57a5ff;z-index:12;pointer-events:none}
+.playhead::before{content:none!important}
+.playhead::after{content:"";position:absolute;left:-16px;top:0;bottom:0;width:16px;background:linear-gradient(to left,rgba(72,158,255,.38) 0,rgba(72,158,255,.2) 6px,rgba(72,158,255,0) 16px);pointer-events:none}
+.playhead-head{position:absolute;z-index:15;top:0;width:11px;height:8px;background:#48a0ff;clip-path:polygon(0 0,100% 0,50% 100%);transform:translateX(-5px);pointer-events:none}
+.clip-muted .stereo-viz,.clip-muted .midiviz,.clip-muted .clip-emptyviz{filter:grayscale(1);opacity:.72}
+.midi-note{background:var(--track-color,#c4a1ff)}
+.wave-row i{background:color-mix(in srgb,var(--track-color,#bde6ff) 72%,transparent)}
+.wave-row:nth-child(2) i{background:color-mix(in srgb,var(--track-color,#9abaff) 55%,transparent)}
+.addmenu{padding:6px;background:#222226;border-color:#414149;border-radius:9px}
+.snapmenu-head{display:flex;align-items:center;justify-content:space-between;padding:3px 6px 5px;border-bottom:1px solid #39393f;margin-bottom:4px;color:#aaa;font-size:9px}.snapmenu-head button{display:grid;place-items:center;width:18px;height:18px;border-radius:4px;color:#888}.snapmenu-head button:hover{background:#39393f;color:#fff}.snapmenu-head svg{width:12px;height:12px}
+.addmenu-head{display:flex;align-items:center;justify-content:space-between;padding:3px 5px 6px;color:#777;font-size:9px;border-bottom:1px solid #34343a;margin-bottom:4px}
+.addmenu-head button,.popclose{width:19px;height:19px;display:grid;place-items:center;border-radius:4px;color:#888}
+.addmenu-head button:hover,.popclose:hover{background:#39393f;color:#fff}
+.addmenu-head svg,.popclose svg{width:12px;height:12px}
+.addmenu>button{height:40px;padding:5px 7px;gap:9px;color:#eee;font-size:11px}
+.addmenu>button:hover{background:#35353c}
+.addmenu>button kbd{margin-left:auto;background:#151518;border:1px solid #33333a;border-radius:4px;padding:2px 5px;color:#aaa;font-size:9px}
+.menu-icon{width:23px;height:23px;border-radius:6px;display:grid;place-items:center;font-style:normal;color:white!important}
+.menu-icon svg{width:13px;height:13px;color:white!important}
+.audio-icon{background:#2487f6}.midi-icon{background:#13c978}.upload-icon{background:#9d62ef}
+.tempowrap{position:relative}
+.tempowrap .bpm{display:flex;align-items:center;gap:4px;cursor:pointer}
+.tempowrap .bpm svg{width:11px;height:11px}
+.tempo-pop{position:absolute;right:0;top:calc(100% + 7px);width:286px;padding:11px;background:#1b1b1f;border:1px solid #414148;border-radius:11px;box-shadow:0 14px 42px #000d;z-index:40;color:#ddd}
+.tempo-pop>header{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;font-size:12px}
+.tempo-mode{width:100%;display:flex;align-items:center;text-align:left;gap:4px;margin:5px 0;padding:12px 10px;background:#222226;border:1px solid #303036;border-radius:8px;font-size:11px;color:#aaa}
+.tempo-mode small{color:#797981;font-size:10px}
+.tempo-mode svg{width:13px;height:13px;margin-left:auto;color:#d6d7dc}
+.tempo-mode.picked{color:#f2f2f3;background:#27272c;border-color:#44444b}
+.tempo-controls{display:grid;grid-template-columns:1fr 34px 74px 34px;gap:5px;margin-top:9px}
+.tempo-controls button,.tempo-controls input{height:35px;background:#25252a;border:1px solid #33333a;border-radius:6px;text-align:center;color:#ddd}
+.tempo-controls input{width:100%;font:15px ui-monospace,monospace}
+.tempo-controls button:first-child{text-align:left;padding:0 8px;font-size:10px}
+/* Hide the horizontal native bar (the custom overview is the horizontal control) and keep a themed vertical rail. */
+.timelineScroll{scrollbar-width:thin;scrollbar-color:#55555e #17171a}
+.timelineScroll::-webkit-scrollbar{width:9px;height:0}
+.timelineScroll::-webkit-scrollbar:horizontal{height:0;display:none}
+.timelineScroll::-webkit-scrollbar-track{background:#17171a}
+.timelineScroll::-webkit-scrollbar-thumb{background:#4c4c55;border-radius:6px;border:2px solid #17171a}
+.timelineScroll::-webkit-scrollbar-thumb:hover{background:#74747d}
+.clip-selected{outline:1px solid #72ff9a!important;outline-offset:0;box-shadow:0 0 0 1px #45f27f77,0 0 10px #4dff8b88!important;z-index:8}.time-selection{position:absolute;z-index:6;top:3px;height:72px;border:1px solid #65ff91;background:#59ff9818;box-shadow:0 0 5px #48ff8c,0 0 11px #33ff7755;cursor:grab;touch-action:none}.time-selection:active{cursor:grabbing}.time-selection .selection-handle{position:absolute;top:0;bottom:0;width:8px;background:#baffce;box-shadow:0 0 9px #57ff95;cursor:ew-resize}.time-selection .selection-handle.left{left:-4px}.time-selection .selection-handle.right{right:-4px}.edit-actions button.active{color:#9fffb4;border-color:#52e77b;background:#15351f}.lane:has(.time-selection){cursor:crosshair}
+.timeline-marker-flag{position:absolute;z-index:9;top:0;bottom:0;width:12px;margin-left:-6px;border-left:1px solid #ffe27a;cursor:ew-resize}.timeline-marker-flag i{position:absolute;left:-6px;top:0;width:11px;height:9px;background:#ffe27a;color:#151515;font:700 7px/9px ui-monospace,monospace;text-align:center;clip-path:polygon(0 0,100% 0,100% 70%,50% 100%,0 70%);font-style:normal}.timeline-marker-rail{position:absolute;z-index:4;top:0;bottom:0;width:1px;background:#ffe27a;box-shadow:0 0 4px #ffe27a77;pointer-events:none}

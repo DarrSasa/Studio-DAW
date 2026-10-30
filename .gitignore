@@ -1,0 +1,19 @@
+# Dependencies and generated output
+node_modules/
+dist/
+coverage/
+.vite/
+
+# Local sample assets: keep these on the user's PC, not in git pushes
+SoundFonts/*.sf2
+SoundFonts/*.sf3
+SoundFonts/*.wav
+SoundFonts/*.mp3
+
+# Local secrets and user data
+.env
+.env.*
+!.env.example
+*.log
+.DS_Store
+Thumbs.db
