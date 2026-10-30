@@ -30,3 +30,6 @@
 .overviewEdge.left{left:0;border-radius:1px 0 0 1px}
 .overviewEdge.right{right:0;border-radius:0 1px 1px 0}
 @media(max-width:700px){.overview{height:36px;padding:0 6px;gap:6px}.overviewTrack{height:20px}.custom-vscroll{flex-basis:16px;min-width:16px}}
+/* Resize grips stay hit-testable over the whole edge, with their visible marker centered vertically. */
+.overviewEdge{cursor:ew-resize!important;touch-action:none}
+.overviewEdge::after{content:"";position:absolute;left:50%;top:50%;width:4px;height:62%;min-height:8px;transform:translate(-50%,-50%);border:1px solid #d7dfe1;border-radius:2px;background:linear-gradient(90deg,#65747a,#d0d8da 50%,#65747a);box-shadow:0 0 2px #111;pointer-events:none}
